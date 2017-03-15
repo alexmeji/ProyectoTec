@@ -2,7 +2,7 @@
  {
     "name": "Macdonalds",
     "description": "Restaurante de Hamburguesas",
-    "image": "Macdonald",
+    "image": "Macdonalds",
     "price": 2,
     "stars": 4
  },
@@ -10,14 +10,14 @@
     "name": "Del Puente",
     "description": "Hamburguesas Clasicas",
     "image": "DelPuente",
-    "price": 2,
-    "stars": 4
+    "price": 3,
+    "stars": 3
  },
  {
     "name": "Donde Joselito",
     "description": "Carnes Importadas",
     "image": "DondeJoselito",
-    "price": 2,
-    "stars": 4
+    "price": 4,
+    "stars": 5
  }
 ]

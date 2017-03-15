@@ -26,7 +26,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="225" id="KFc-Lz-gSL" customClass="RestaurantCell" customModule="ProyectoTec" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RestaurantCell" rowHeight="225" id="KFc-Lz-gSL" customClass="RestaurantCell" customModule="ProyectoTec" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="225"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KFc-Lz-gSL" id="WN0-uB-vel">
@@ -94,11 +94,14 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="info" destination="ugT-CQ-Rc4" id="uNa-jm-7DG"/>
                                             <outlet property="money_1" destination="LJD-kf-Gr6" id="UVP-5V-FQf"/>
                                             <outlet property="money_2" destination="AP1-DP-PDP" id="bjF-SN-pqF"/>
                                             <outlet property="money_3" destination="GjV-JS-coV" id="pGN-hG-enP"/>
                                             <outlet property="money_4" destination="ViS-R7-JeH" id="ifD-eH-Rcn"/>
                                             <outlet property="money_5" destination="VrP-5D-sm7" id="fXu-NX-HyE"/>
+                                            <outlet property="name" destination="hRD-Mu-Dja" id="nju-zH-Qdu"/>
+                                            <outlet property="picture" destination="ErT-cR-UZf" id="Wyw-PT-Sbr"/>
                                             <outlet property="star_1" destination="rHt-Ln-k6P" id="cVl-re-iUY"/>
                                             <outlet property="star_2" destination="FgH-JW-AVB" id="lvn-it-awA"/>
                                             <outlet property="star_3" destination="PaS-Tl-ScN" id="7eZ-Ub-hj0"/>
@@ -113,6 +116,9 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" title="Restaurantes" id="BQH-ae-QHq"/>
+                    <connections>
+                        <outlet property="tableInfo" destination="qNg-Ra-btS" id="box-TM-SKE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
