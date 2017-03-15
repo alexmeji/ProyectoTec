@@ -15,6 +15,7 @@
 		20ABCC0F1E79BC4700EC2322 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20ABCC0E1E79BC4700EC2322 /* Constants.swift */; };
 		20ABCC211E79C47700EC2322 /* info.json in Resources */ = {isa = PBXBuildFile; fileRef = 20ABCC201E79C47700EC2322 /* info.json */; };
 		20ABCC231E79CB0500EC2322 /* RestaurantsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20ABCC221E79CB0500EC2322 /* RestaurantsViewController.swift */; };
+		20ABCC291E79DE6D00EC2322 /* RestaurantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20ABCC281E79DE6D00EC2322 /* RestaurantCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		20ABCC0E1E79BC4700EC2322 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		20ABCC201E79C47700EC2322 /* info.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = info.json; sourceTree = "<group>"; };
 		20ABCC221E79CB0500EC2322 /* RestaurantsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantsViewController.swift; sourceTree = "<group>"; };
+		20ABCC281E79DE6D00EC2322 /* RestaurantCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 		20ABCC1B1E79C43300EC2322 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				20ABCC281E79DE6D00EC2322 /* RestaurantCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -178,6 +181,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20ABCC291E79DE6D00EC2322 /* RestaurantCell.swift in Sources */,
 				20ABCBFB1E79AFFF00EC2322 /* ViewController.swift in Sources */,
 				20ABCC231E79CB0500EC2322 /* RestaurantsViewController.swift in Sources */,
 				20ABCBF91E79AFFF00EC2322 /* AppDelegate.swift in Sources */,
