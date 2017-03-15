@@ -1,0 +1,23 @@
+[
+ {
+    "name": "Macdonalds",
+    "description": "Restaurante de Hamburguesas",
+    "image": "Macdonald",
+    "price": 2,
+    "stars": 4
+ },
+ {
+    "name": "Del Puente",
+    "description": "Hamburguesas Clasicas",
+    "image": "DelPuente",
+    "price": 2,
+    "stars": 4
+ },
+ {
+    "name": "Donde Joselito",
+    "description": "Carnes Importadas",
+    "image": "DondeJoselito",
+    "price": 2,
+    "stars": 4
+ }
+]
