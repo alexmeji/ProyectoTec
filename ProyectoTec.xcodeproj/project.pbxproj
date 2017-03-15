@@ -13,6 +13,8 @@
 		20ABCC001E79AFFF00EC2322 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20ABCBFF1E79AFFF00EC2322 /* Assets.xcassets */; };
 		20ABCC031E79AFFF00EC2322 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20ABCC011E79AFFF00EC2322 /* LaunchScreen.storyboard */; };
 		20ABCC0F1E79BC4700EC2322 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20ABCC0E1E79BC4700EC2322 /* Constants.swift */; };
+		20ABCC211E79C47700EC2322 /* info.json in Resources */ = {isa = PBXBuildFile; fileRef = 20ABCC201E79C47700EC2322 /* info.json */; };
+		20ABCC231E79CB0500EC2322 /* RestaurantsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20ABCC221E79CB0500EC2322 /* RestaurantsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		20ABCC021E79AFFF00EC2322 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		20ABCC041E79AFFF00EC2322 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		20ABCC0E1E79BC4700EC2322 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		20ABCC201E79C47700EC2322 /* info.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = info.json; sourceTree = "<group>"; };
+		20ABCC221E79CB0500EC2322 /* RestaurantsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,8 +60,10 @@
 		20ABCBF71E79AFFF00EC2322 /* ProyectoTec */ = {
 			isa = PBXGroup;
 			children = (
-				20ABCC0C1E79BBDC00EC2322 /* Cells */,
-				20ABCC0D1E79BBDC00EC2322 /* Controllers */,
+				20ABCC1A1E79C43300EC2322 /* Assets */,
+				20ABCC1B1E79C43300EC2322 /* Cells */,
+				20ABCC1C1E79C43300EC2322 /* Controllers */,
+				20ABCC1D1E79C43300EC2322 /* Sounds */,
 				20ABCBF81E79AFFF00EC2322 /* AppDelegate.swift */,
 				20ABCBFA1E79AFFF00EC2322 /* ViewController.swift */,
 				20ABCBFC1E79AFFF00EC2322 /* Main.storyboard */,
@@ -69,18 +75,34 @@
 			path = ProyectoTec;
 			sourceTree = "<group>";
 		};
-		20ABCC0C1E79BBDC00EC2322 /* Cells */ = {
+		20ABCC1A1E79C43300EC2322 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				20ABCC201E79C47700EC2322 /* info.json */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		20ABCC1B1E79C43300EC2322 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Cells;
 			sourceTree = "<group>";
 		};
-		20ABCC0D1E79BBDC00EC2322 /* Controllers */ = {
+		20ABCC1C1E79C43300EC2322 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				20ABCC221E79CB0500EC2322 /* RestaurantsViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		20ABCC1D1E79C43300EC2322 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Controllers;
+			path = Sounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,6 +165,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				20ABCC031E79AFFF00EC2322 /* LaunchScreen.storyboard in Resources */,
+				20ABCC211E79C47700EC2322 /* info.json in Resources */,
 				20ABCC001E79AFFF00EC2322 /* Assets.xcassets in Resources */,
 				20ABCBFE1E79AFFF00EC2322 /* Main.storyboard in Resources */,
 			);
@@ -156,6 +179,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				20ABCBFB1E79AFFF00EC2322 /* ViewController.swift in Sources */,
+				20ABCC231E79CB0500EC2322 /* RestaurantsViewController.swift in Sources */,
 				20ABCBF91E79AFFF00EC2322 /* AppDelegate.swift in Sources */,
 				20ABCC0F1E79BC4700EC2322 /* Constants.swift in Sources */,
 			);
@@ -317,6 +341,7 @@
 				20ABCC091E79AFFF00EC2322 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

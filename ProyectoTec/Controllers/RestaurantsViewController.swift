@@ -1,5 +1,5 @@
 //
-//  ResturantsViewController.swift
+//  RestaurantsViewController.swift
 //  ProyectoTec
 //
 //  Created by Alex Mejicanos on 15/03/17.
@@ -8,12 +8,14 @@
 
 import UIKit
 
-class ResturantsViewController: UIViewController {
+class RestaurantsViewController: UIViewController {
 
+    var restaurants: NSArray? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        loadJSONInfo()
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,6 +24,20 @@ class ResturantsViewController: UIViewController {
     }
     
 
+    func loadJSONInfo() -> Void {
+        if let path = Bundle.main.path(forResource: "info", ofType: "json") {
+            do {
+                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .alwaysMapped)
+                let info = try JSONSerialization.jsonObject(with: data, options: []) as! NSArray
+                restaurants = info
+            } catch let error {
+                print(error.localizedDescription)
+            }
+        } else {
+            print("Invalid filename/path")
+        }
+    }
+    
     /*
     // MARK: - Navigation
 
