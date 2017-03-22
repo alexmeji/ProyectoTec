@@ -24,7 +24,7 @@ class RestaurantCell: UITableViewCell {
     @IBOutlet var money_4: UIImageView?
     @IBOutlet var money_5: UIImageView?
     
-    
+
     
     override func awakeFromNib() {
         super.awakeFromNib()

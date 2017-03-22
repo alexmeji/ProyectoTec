@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import MapKit
 
 class RestaurantsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet var tableInfo: UITableView?
+    @IBOutlet var map: MKMapView?
     
     var restaurants: NSArray? = NSArray()
     
@@ -20,6 +22,8 @@ class RestaurantsViewController: UIViewController, UITableViewDelegate, UITableV
         loadJSONInfo()
         tableInfo?.delegate = self
         tableInfo?.dataSource = self
+        
+        map?.isHidden = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -112,6 +116,18 @@ class RestaurantsViewController: UIViewController, UITableViewDelegate, UITableV
             }
         } else {
             print("Invalid filename/path")
+        }
+    }
+    
+    @IBAction func esconderView(sender: UISegmentedControl) {
+        if(sender.selectedSegmentIndex == 0) {
+            //MOSTRAR LISTA
+            tableInfo?.isHidden = false
+            map?.isHidden = true
+        } else {
+            //MOSTRA MAPA
+            tableInfo?.isHidden = true
+            map?.isHidden = false
         }
     }
     

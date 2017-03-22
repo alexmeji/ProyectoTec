@@ -1,0 +1,6 @@
+framework module Pods_ProyectoTec {
+  umbrella header "Pods-ProyectoTec-umbrella.h"
+
+  export *
+  module * { export * }
+}

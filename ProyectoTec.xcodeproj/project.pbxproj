@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		208BF7E01E80B78F00BBA84A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 208BF7DF1E80B78F00BBA84A /* MapKit.framework */; };
+		208BF7E21E80BBFA00BBA84A /* iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 208BF7E11E80BBFA00BBA84A /* iPad.storyboard */; };
 		20ABCBF91E79AFFF00EC2322 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20ABCBF81E79AFFF00EC2322 /* AppDelegate.swift */; };
 		20ABCBFB1E79AFFF00EC2322 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20ABCBFA1E79AFFF00EC2322 /* ViewController.swift */; };
 		20ABCBFE1E79AFFF00EC2322 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20ABCBFC1E79AFFF00EC2322 /* Main.storyboard */; };
@@ -16,9 +18,12 @@
 		20ABCC211E79C47700EC2322 /* info.json in Resources */ = {isa = PBXBuildFile; fileRef = 20ABCC201E79C47700EC2322 /* info.json */; };
 		20ABCC231E79CB0500EC2322 /* RestaurantsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20ABCC221E79CB0500EC2322 /* RestaurantsViewController.swift */; };
 		20ABCC291E79DE6D00EC2322 /* RestaurantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20ABCC281E79DE6D00EC2322 /* RestaurantCell.swift */; };
+		BFF2914E6B1E19CE5CFB2E2C /* Pods_ProyectoTec.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2674B7557B41F0B9D192702A /* Pods_ProyectoTec.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		208BF7DF1E80B78F00BBA84A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		208BF7E11E80BBFA00BBA84A /* iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPad.storyboard; sourceTree = "<group>"; };
 		20ABCBF51E79AFFF00EC2322 /* ProyectoTec.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProyectoTec.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20ABCBF81E79AFFF00EC2322 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		20ABCBFA1E79AFFF00EC2322 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -30,6 +35,9 @@
 		20ABCC201E79C47700EC2322 /* info.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = info.json; sourceTree = "<group>"; };
 		20ABCC221E79CB0500EC2322 /* RestaurantsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantsViewController.swift; sourceTree = "<group>"; };
 		20ABCC281E79DE6D00EC2322 /* RestaurantCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantCell.swift; sourceTree = "<group>"; };
+		2674B7557B41F0B9D192702A /* Pods_ProyectoTec.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProyectoTec.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		79DE35A0BA328FB39BFBCE89 /* Pods-ProyectoTec.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProyectoTec.release.xcconfig"; path = "Pods/Target Support Files/Pods-ProyectoTec/Pods-ProyectoTec.release.xcconfig"; sourceTree = "<group>"; };
+		9C731741F38EC27DAD03BFF8 /* Pods-ProyectoTec.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProyectoTec.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ProyectoTec/Pods-ProyectoTec.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +45,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				208BF7E01E80B78F00BBA84A /* MapKit.framework in Frameworks */,
+				BFF2914E6B1E19CE5CFB2E2C /* Pods_ProyectoTec.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,6 +58,8 @@
 			children = (
 				20ABCBF71E79AFFF00EC2322 /* ProyectoTec */,
 				20ABCBF61E79AFFF00EC2322 /* Products */,
+				7A4B1CB4810193D0C1B639CA /* Pods */,
+				786FD2BCD45EEA55DAD4C13C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -73,6 +85,7 @@
 				20ABCC011E79AFFF00EC2322 /* LaunchScreen.storyboard */,
 				20ABCC041E79AFFF00EC2322 /* Info.plist */,
 				20ABCC0E1E79BC4700EC2322 /* Constants.swift */,
+				208BF7E11E80BBFA00BBA84A /* iPad.storyboard */,
 			);
 			path = ProyectoTec;
 			sourceTree = "<group>";
@@ -108,6 +121,24 @@
 			path = Sounds;
 			sourceTree = "<group>";
 		};
+		786FD2BCD45EEA55DAD4C13C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				208BF7DF1E80B78F00BBA84A /* MapKit.framework */,
+				2674B7557B41F0B9D192702A /* Pods_ProyectoTec.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7A4B1CB4810193D0C1B639CA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9C731741F38EC27DAD03BFF8 /* Pods-ProyectoTec.debug.xcconfig */,
+				79DE35A0BA328FB39BFBCE89 /* Pods-ProyectoTec.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -115,9 +146,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 20ABCC071E79AFFF00EC2322 /* Build configuration list for PBXNativeTarget "ProyectoTec" */;
 			buildPhases = (
+				DF78CE8DC6AABA7BAE99CEB7 /* [CP] Check Pods Manifest.lock */,
 				20ABCBF11E79AFFE00EC2322 /* Sources */,
 				20ABCBF21E79AFFE00EC2322 /* Frameworks */,
 				20ABCBF31E79AFFE00EC2322 /* Resources */,
+				E8718F9E7957AA5A51A06556 /* [CP] Embed Pods Frameworks */,
+				8B0E739FBE9763519E77A624 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -141,6 +175,11 @@
 					20ABCBF41E79AFFE00EC2322 = {
 						CreatedOnToolsVersion = 8.2.1;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -170,11 +209,60 @@
 				20ABCC031E79AFFF00EC2322 /* LaunchScreen.storyboard in Resources */,
 				20ABCC211E79C47700EC2322 /* info.json in Resources */,
 				20ABCC001E79AFFF00EC2322 /* Assets.xcassets in Resources */,
+				208BF7E21E80BBFA00BBA84A /* iPad.storyboard in Resources */,
 				20ABCBFE1E79AFFF00EC2322 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8B0E739FBE9763519E77A624 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ProyectoTec/Pods-ProyectoTec-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DF78CE8DC6AABA7BAE99CEB7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E8718F9E7957AA5A51A06556 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ProyectoTec/Pods-ProyectoTec-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		20ABCBF11E79AFFE00EC2322 /* Sources */ = {
@@ -304,6 +392,7 @@
 		};
 		20ABCC081E79AFFF00EC2322 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9C731741F38EC27DAD03BFF8 /* Pods-ProyectoTec.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ProyectoTec/Info.plist;
@@ -311,11 +400,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.tec.ProyectoTec;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		20ABCC091E79AFFF00EC2322 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 79DE35A0BA328FB39BFBCE89 /* Pods-ProyectoTec.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ProyectoTec/Info.plist;
@@ -323,6 +414,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.tec.ProyectoTec;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
