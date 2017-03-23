@@ -8,13 +8,14 @@
 
 import UIKit
 import MapKit
+import SwiftyJSON
 
 class RestaurantsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet var tableInfo: UITableView?
     @IBOutlet var map: MKMapView?
     
-    var restaurants: NSArray? = NSArray()
+    var restaurants: JSON?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,16 +46,16 @@ class RestaurantsViewController: UIViewController, UITableViewDelegate, UITableV
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RestaurantCell", for: indexPath) as! RestaurantCell
-        let restaurantInfo: [String: AnyObject] = restaurants![indexPath.row] as! [String: AnyObject]
+        let restaurantInfo: JSON = restaurants![indexPath.row]
         
         print(restaurantInfo)
         
-        cell.picture?.image = UIImage(named: restaurantInfo["image"] as! String)
-        cell.name?.text = restaurantInfo["name"] as? String
-        cell.info?.text = restaurantInfo["description"] as? String
+        cell.picture?.image = UIImage(named: restaurantInfo["image"].string!)
+        cell.name?.text = restaurantInfo["name"].string
+        cell.info?.text = restaurantInfo["description"].string
         
-        let starCount: Int = (restaurantInfo["stars"] as! Int)
-        let priceCount: Int = (restaurantInfo["price"] as! Int)
+        let starCount: Int = (restaurantInfo["stars"].int)!
+        let priceCount: Int = (restaurantInfo["price"].int)!
         
         cell.star_1?.isHidden = true
         cell.star_2?.isHidden = true
@@ -109,8 +110,7 @@ class RestaurantsViewController: UIViewController, UITableViewDelegate, UITableV
         if let path = Bundle.main.path(forResource: "info", ofType: "json") {
             do {
                 let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .alwaysMapped)
-                let info = try JSONSerialization.jsonObject(with: data, options: []) as! NSArray
-                restaurants = info
+                restaurants = JSON(data: data)
             } catch let error {
                 print(error.localizedDescription)
             }
