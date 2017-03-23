@@ -106,6 +106,12 @@ class RestaurantsViewController: UIViewController, UITableViewDelegate, UITableV
         return cell
     }
 
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "AlimentosView") as! AlimentosViewController
+        vc.restaurant = restaurants?[indexPath.row]
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     func loadJSONInfo() -> Void {
         if let path = Bundle.main.path(forResource: "info", ofType: "json") {
             do {

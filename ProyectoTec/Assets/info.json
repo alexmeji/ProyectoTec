@@ -4,20 +4,46 @@
     "description": "Restaurante de Hamburguesas",
     "image": "Macdonalds",
     "price": 2,
-    "stars": 4
+    "stars": 4,
+    "latitude": 14.617377,
+    "longitude": -90.515770,
+    "food": [
+        {
+            "name": "Quesoburguesa",
+            "image": "quesoburguesa",
+            "price": "Q.22.00"
+        },
+        {
+             "name": "Quesoburguesa Doble",
+             "image": "quesoburguesadoble",
+             "price": "Q.35.00"
+        }
+    ]
  },
  {
     "name": "Del Puente",
     "description": "Hamburguesas Clasicas",
     "image": "DelPuente",
     "price": 3,
-    "stars": 3
+    "stars": 3,
+    "latitude": 14.627584,
+    "longitude": -90.527157,
+    "food": [
+        {
+             "name": "Quesoburguesa",
+             "image": "quesoburguesa",
+             "price": "Q.22.00"
+        }
+    ]
  },
  {
     "name": "Donde Joselito",
     "description": "Carnes Importadas",
     "image": "DondeJoselito",
     "price": 4,
-    "stars": 5
+    "stars": 5,
+    "latitude": 14.596179,
+    "longitude": -90.585819,
+    "food": []
  }
 ]

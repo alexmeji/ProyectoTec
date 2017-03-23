@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		208BF7E01E80B78F00BBA84A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 208BF7DF1E80B78F00BBA84A /* MapKit.framework */; };
 		208BF7E21E80BBFA00BBA84A /* iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 208BF7E11E80BBFA00BBA84A /* iPad.storyboard */; };
+		20A061B91E834BD3008E869E /* AlimentosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A061B81E834BD3008E869E /* AlimentosViewController.swift */; };
+		20A061BC1E834E62008E869E /* AlimentosCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A061BA1E834E62008E869E /* AlimentosCell.swift */; };
+		20A061BD1E834E62008E869E /* AlimentosCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20A061BB1E834E62008E869E /* AlimentosCell.xib */; };
 		20ABCBF91E79AFFF00EC2322 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20ABCBF81E79AFFF00EC2322 /* AppDelegate.swift */; };
 		20ABCBFB1E79AFFF00EC2322 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20ABCBFA1E79AFFF00EC2322 /* ViewController.swift */; };
 		20ABCBFE1E79AFFF00EC2322 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20ABCBFC1E79AFFF00EC2322 /* Main.storyboard */; };
@@ -24,6 +27,9 @@
 /* Begin PBXFileReference section */
 		208BF7DF1E80B78F00BBA84A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		208BF7E11E80BBFA00BBA84A /* iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPad.storyboard; sourceTree = "<group>"; };
+		20A061B81E834BD3008E869E /* AlimentosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlimentosViewController.swift; sourceTree = "<group>"; };
+		20A061BA1E834E62008E869E /* AlimentosCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlimentosCell.swift; sourceTree = "<group>"; };
+		20A061BB1E834E62008E869E /* AlimentosCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlimentosCell.xib; sourceTree = "<group>"; };
 		20ABCBF51E79AFFF00EC2322 /* ProyectoTec.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProyectoTec.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20ABCBF81E79AFFF00EC2322 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		20ABCBFA1E79AFFF00EC2322 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +108,8 @@
 			isa = PBXGroup;
 			children = (
 				20ABCC281E79DE6D00EC2322 /* RestaurantCell.swift */,
+				20A061BA1E834E62008E869E /* AlimentosCell.swift */,
+				20A061BB1E834E62008E869E /* AlimentosCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -110,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				20ABCC221E79CB0500EC2322 /* RestaurantsViewController.swift */,
+				20A061B81E834BD3008E869E /* AlimentosViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -206,6 +215,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20A061BD1E834E62008E869E /* AlimentosCell.xib in Resources */,
 				20ABCC031E79AFFF00EC2322 /* LaunchScreen.storyboard in Resources */,
 				20ABCC211E79C47700EC2322 /* info.json in Resources */,
 				20ABCC001E79AFFF00EC2322 /* Assets.xcassets in Resources */,
@@ -274,6 +284,8 @@
 				20ABCC231E79CB0500EC2322 /* RestaurantsViewController.swift in Sources */,
 				20ABCBF91E79AFFF00EC2322 /* AppDelegate.swift in Sources */,
 				20ABCC0F1E79BC4700EC2322 /* Constants.swift in Sources */,
+				20A061B91E834BD3008E869E /* AlimentosViewController.swift in Sources */,
+				20A061BC1E834E62008E869E /* AlimentosCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

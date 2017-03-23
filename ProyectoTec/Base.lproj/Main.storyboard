@@ -140,12 +140,47 @@
             </objects>
             <point key="canvasLocation" x="1056.8" y="123.68815592203899"/>
         </scene>
+        <!--Alimentos View Controller-->
+        <scene sceneID="CPq-Bz-I0p">
+            <objects>
+                <viewController storyboardIdentifier="AlimentosView" id="o42-kc-Mvb" customClass="AlimentosViewController" customModule="ProyectoTec" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="efD-GL-V8v"/>
+                        <viewControllerLayoutGuide type="bottom" id="sLI-HI-Pgc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="UGN-Ih-gyQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Cce-ob-XJa">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="pC1-02-ceO">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="collectionViewInfo" destination="Cce-ob-XJa" id="mNx-OO-IZw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1eh-pb-7S9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1933.5999999999999" y="123.68815592203899"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="afO-b6-5bZ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YgE-PW-leG" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7Ep-Gl-Fyz">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="7Ep-Gl-Fyz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
