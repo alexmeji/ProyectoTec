@@ -9,6 +9,7 @@
 import UIKit
 import MapKit
 import SwiftyJSON
+import AlamofireImage
 
 class RestaurantsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -49,8 +50,12 @@ class RestaurantsViewController: UIViewController, UITableViewDelegate, UITableV
         let restaurantInfo: JSON = restaurants![indexPath.row]
         
         print(restaurantInfo)
+        let urlImage: String = restaurantInfo["image"].stringValue
+        print(urlImage)
         
-        cell.picture?.image = UIImage(named: restaurantInfo["image"].string!)
+        
+        cell.picture?.af_setImage(withURL: URL(string: urlImage)!)
+        cell.picture?.layoutIfNeeded()
         cell.name?.text = restaurantInfo["name"].string
         cell.info?.text = restaurantInfo["description"].string
         

@@ -7,4 +7,5 @@ target 'ProyectoTec' do
 
   # Pods for ProyectoTec
   pod 'SwiftyJSON'
+  pod 'AlamofireImage', '~> 3.1'
 end

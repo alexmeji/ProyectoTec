@@ -2,7 +2,7 @@
  {
     "name": "Macdonalds",
     "description": "Restaurante de Hamburguesas",
-    "image": "Macdonalds",
+    "image": "http://elestimulo.com/bienmesabe/wp-content/uploads/sites/7/2015/09/mcdonalds_BMS.jpg",
     "price": 2,
     "stars": 4,
     "latitude": 14.617377,
@@ -23,7 +23,7 @@
  {
     "name": "Del Puente",
     "description": "Hamburguesas Clasicas",
-    "image": "DelPuente",
+    "image": "http://www.buscorestaurantes.com/files/images/Restaurante-El-Puente-39513.jpg",
     "price": 3,
     "stars": 3,
     "latitude": 14.627584,
@@ -39,7 +39,7 @@
  {
     "name": "Donde Joselito",
     "description": "Carnes Importadas",
-    "image": "DondeJoselito",
+    "image": "http://www.meridadeyucatan.com/wp-content/uploads/2013/11/carne_en_merida.jpg",
     "price": 4,
     "stars": 5,
     "latitude": 14.596179,
