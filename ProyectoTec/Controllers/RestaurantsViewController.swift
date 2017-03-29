@@ -11,7 +11,7 @@ import MapKit
 import SwiftyJSON
 import AlamofireImage
 
-class RestaurantsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class RestaurantsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMapViewDelegate {
 
     @IBOutlet var tableInfo: UITableView?
     @IBOutlet var map: MKMapView?
@@ -24,8 +24,10 @@ class RestaurantsViewController: UIViewController, UITableViewDelegate, UITableV
         loadJSONInfo()
         tableInfo?.delegate = self
         tableInfo?.dataSource = self
+        loadAnnotationsOnMap()
         
         map?.isHidden = true
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -49,10 +51,7 @@ class RestaurantsViewController: UIViewController, UITableViewDelegate, UITableV
         let cell = tableView.dequeueReusableCell(withIdentifier: "RestaurantCell", for: indexPath) as! RestaurantCell
         let restaurantInfo: JSON = restaurants![indexPath.row]
         
-        print(restaurantInfo)
         let urlImage: String = restaurantInfo["image"].stringValue
-        print(urlImage)
-        
         
         cell.picture?.af_setImage(withURL: URL(string: urlImage)!)
         cell.picture?.layoutIfNeeded()
@@ -139,6 +138,14 @@ class RestaurantsViewController: UIViewController, UITableViewDelegate, UITableV
             //MOSTRA MAPA
             tableInfo?.isHidden = true
             map?.isHidden = false
+        }
+    }
+    
+    func loadAnnotationsOnMap() -> Void {
+        for restaurant in (restaurants?.array)!{
+            let annotation = RestaurantAnnotation(name: restaurant["name"].stringValue, locationName: restaurant["description"].stringValue, coordinate: CLLocationCoordinate2D(latitude: CLLocationDegrees(restaurant["latitude"].floatValue), longitude: CLLocationDegrees(restaurant["longitude"].floatValue)))
+            
+            map?.addAnnotation(annotation)
         }
     }
     

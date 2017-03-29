@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		202053771E8C276F00A1CCE4 /* RestaurantAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202053761E8C276F00A1CCE4 /* RestaurantAnnotation.swift */; };
 		208BF7E01E80B78F00BBA84A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 208BF7DF1E80B78F00BBA84A /* MapKit.framework */; };
 		208BF7E21E80BBFA00BBA84A /* iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 208BF7E11E80BBFA00BBA84A /* iPad.storyboard */; };
 		20A061B91E834BD3008E869E /* AlimentosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A061B81E834BD3008E869E /* AlimentosViewController.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		202053761E8C276F00A1CCE4 /* RestaurantAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantAnnotation.swift; sourceTree = "<group>"; };
 		208BF7DF1E80B78F00BBA84A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		208BF7E11E80BBFA00BBA84A /* iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPad.storyboard; sourceTree = "<group>"; };
 		20A061B81E834BD3008E869E /* AlimentosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlimentosViewController.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				20ABCC201E79C47700EC2322 /* info.json */,
+				202053761E8C276F00A1CCE4 /* RestaurantAnnotation.swift */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				20ABCC291E79DE6D00EC2322 /* RestaurantCell.swift in Sources */,
+				202053771E8C276F00A1CCE4 /* RestaurantAnnotation.swift in Sources */,
 				20ABCBFB1E79AFFF00EC2322 /* ViewController.swift in Sources */,
 				20ABCC231E79CB0500EC2322 /* RestaurantsViewController.swift in Sources */,
 				20ABCBF91E79AFFF00EC2322 /* AppDelegate.swift in Sources */,
