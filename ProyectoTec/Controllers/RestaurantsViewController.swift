@@ -11,7 +11,7 @@ import MapKit
 import SwiftyJSON
 import AlamofireImage
 
-class RestaurantsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMapViewDelegate {
+class RestaurantsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMapViewDelegate{
 
     @IBOutlet var tableInfo: UITableView?
     @IBOutlet var map: MKMapView?
@@ -21,15 +21,16 @@ class RestaurantsViewController: UIViewController, UITableViewDelegate, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        loadJSONInfo()
+        
         tableInfo?.delegate = self
         tableInfo?.dataSource = self
-        loadAnnotationsOnMap()
         
+        map?.delegate = self
         map?.isHidden = true
         
+        loadJSONInfo()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -40,7 +41,7 @@ class RestaurantsViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (restaurants?.count)!
+        return (restaurants!.count)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -54,7 +55,7 @@ class RestaurantsViewController: UIViewController, UITableViewDelegate, UITableV
         let urlImage: String = restaurantInfo["image"].stringValue
         
         cell.picture?.af_setImage(withURL: URL(string: urlImage)!)
-        cell.picture?.layoutIfNeeded()
+        
         cell.name?.text = restaurantInfo["name"].string
         cell.info?.text = restaurantInfo["description"].string
         
@@ -116,18 +117,6 @@ class RestaurantsViewController: UIViewController, UITableViewDelegate, UITableV
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    func loadJSONInfo() -> Void {
-        if let path = Bundle.main.path(forResource: "info", ofType: "json") {
-            do {
-                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .alwaysMapped)
-                restaurants = JSON(data: data)
-            } catch let error {
-                print(error.localizedDescription)
-            }
-        } else {
-            print("Invalid filename/path")
-        }
-    }
     
     @IBAction func esconderView(sender: UISegmentedControl) {
         if(sender.selectedSegmentIndex == 0) {
@@ -142,10 +131,56 @@ class RestaurantsViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     func loadAnnotationsOnMap() -> Void {
+        var index = 0
         for restaurant in (restaurants?.array)!{
-            let annotation = RestaurantAnnotation(name: restaurant["name"].stringValue, locationName: restaurant["description"].stringValue, coordinate: CLLocationCoordinate2D(latitude: CLLocationDegrees(restaurant["latitude"].floatValue), longitude: CLLocationDegrees(restaurant["longitude"].floatValue)))
-            
+            let annotation = RestaurantAnnotation(title: restaurant["name"].stringValue, subtitle: restaurant["description"].stringValue, coordinate: CLLocationCoordinate2D(latitude: CLLocationDegrees(restaurant["latitude"].floatValue), longitude: CLLocationDegrees(restaurant["longitude"].floatValue)), tag: index)
+            //annotation.image = UIImage(named: "marker")
             map?.addAnnotation(annotation)
+            index += 1
+        }
+    }
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        if let annotation = annotation as? RestaurantAnnotation {
+            let identifier = "pin"
+            var view: MKPinAnnotationView
+            if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKPinAnnotationView{
+                dequeuedView.annotation = annotation
+                view = dequeuedView
+            } else {
+                view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+                view.canShowCallout = true
+                view.calloutOffset = CGPoint(x: -5, y: 5)
+                let buttonCall = UIButton(type: .detailDisclosure)
+                buttonCall.addTarget(self, action: #selector(gotToMenu(sender:)), for: .touchUpInside)
+                buttonCall.tag = annotation.tag!
+                view.rightCalloutAccessoryView = buttonCall
+            }
+            //view.image = UIImage(named: "marker")
+            return view
+        }
+        return nil
+    }
+    
+    @IBAction func gotToMenu(sender: UIButton) {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "AlimentosView") as! AlimentosViewController
+        vc.restaurant = restaurants?[sender.tag]
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func loadJSONInfo() -> Void {
+        if let path = Bundle.main.path(forResource: "info", ofType: "json") {
+            do {
+                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .alwaysMapped)
+                restaurants = JSON(data: data)
+                loadAnnotationsOnMap()
+                tableInfo?.reloadData()
+            } catch let error {
+                print(error.localizedDescription)
+                
+            }
+        } else {
+            print("Invalid filename/path")
         }
     }
     

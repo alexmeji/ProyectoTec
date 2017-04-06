@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		202053771E8C276F00A1CCE4 /* RestaurantAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202053761E8C276F00A1CCE4 /* RestaurantAnnotation.swift */; };
+		203570721E95C3D600B3AAA0 /* ProyectoTec.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 203570701E95C3D600B3AAA0 /* ProyectoTec.xcdatamodeld */; };
 		208BF7E01E80B78F00BBA84A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 208BF7DF1E80B78F00BBA84A /* MapKit.framework */; };
 		208BF7E21E80BBFA00BBA84A /* iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 208BF7E11E80BBFA00BBA84A /* iPad.storyboard */; };
 		20A061B91E834BD3008E869E /* AlimentosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A061B81E834BD3008E869E /* AlimentosViewController.swift */; };
@@ -27,6 +28,7 @@
 
 /* Begin PBXFileReference section */
 		202053761E8C276F00A1CCE4 /* RestaurantAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantAnnotation.swift; sourceTree = "<group>"; };
+		203570711E95C3D600B3AAA0 /* ProyectoTec.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ProyectoTec.xcdatamodel; sourceTree = "<group>"; };
 		208BF7DF1E80B78F00BBA84A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		208BF7E11E80BBFA00BBA84A /* iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPad.storyboard; sourceTree = "<group>"; };
 		20A061B81E834BD3008E869E /* AlimentosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlimentosViewController.swift; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 				20ABCC041E79AFFF00EC2322 /* Info.plist */,
 				20ABCC0E1E79BC4700EC2322 /* Constants.swift */,
 				208BF7E11E80BBFA00BBA84A /* iPad.storyboard */,
+				203570701E95C3D600B3AAA0 /* ProyectoTec.xcdatamodeld */,
 			);
 			path = ProyectoTec;
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 				20ABCC0F1E79BC4700EC2322 /* Constants.swift in Sources */,
 				20A061B91E834BD3008E869E /* AlimentosViewController.swift in Sources */,
 				20A061BC1E834E62008E869E /* AlimentosCell.swift in Sources */,
+				203570721E95C3D600B3AAA0 /* ProyectoTec.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,6 +415,7 @@
 			baseConfigurationReference = 9C731741F38EC27DAD03BFF8 /* Pods-ProyectoTec.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = ProyectoTec/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tec.ProyectoTec;
@@ -425,6 +430,7 @@
 			baseConfigurationReference = 79DE35A0BA328FB39BFBCE89 /* Pods-ProyectoTec.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = ProyectoTec/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tec.ProyectoTec;
@@ -456,6 +462,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		203570701E95C3D600B3AAA0 /* ProyectoTec.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				203570711E95C3D600B3AAA0 /* ProyectoTec.xcdatamodel */,
+			);
+			currentVersion = 203570711E95C3D600B3AAA0 /* ProyectoTec.xcdatamodel */;
+			path = ProyectoTec.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 20ABCBED1E79AFFE00EC2322 /* Project object */;
 }

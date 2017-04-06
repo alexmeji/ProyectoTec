@@ -10,14 +10,17 @@ import UIKit
 import MapKit
 
 class RestaurantAnnotation: NSObject, MKAnnotation {
-    let name: String
-    let locationName: String
+    var title: String?
+    var subtitle: String?
+    var image: UIImage?
     let coordinate: CLLocationCoordinate2D
+    var tag: Int?
     
-    init(name: String, locationName: String, coordinate: CLLocationCoordinate2D) {
-        self.name = name
-        self.locationName = locationName
+    init(title: String, subtitle: String, coordinate: CLLocationCoordinate2D, tag: Int) {
+        self.title = title
+        self.subtitle = subtitle
         self.coordinate = coordinate
+        self.tag = tag
         
         super.init()
     }
