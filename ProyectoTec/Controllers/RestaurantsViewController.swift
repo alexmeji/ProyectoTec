@@ -10,6 +10,7 @@ import UIKit
 import MapKit
 import SwiftyJSON
 import AlamofireImage
+import CoreData
 
 class RestaurantsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMapViewDelegate{
 
@@ -17,6 +18,7 @@ class RestaurantsViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet var map: MKMapView?
     
     var restaurants: JSON?
+    var listRestaurants: [NSManagedObject] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +30,7 @@ class RestaurantsViewController: UIViewController, UITableViewDelegate, UITableV
         map?.delegate = self
         map?.isHidden = true
         
-        loadJSONInfo()
+        loadRestaurants()
     }
     
     override func didReceiveMemoryWarning() {
@@ -41,7 +43,7 @@ class RestaurantsViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (restaurants!.count)
+        return (listRestaurants.count)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -50,17 +52,17 @@ class RestaurantsViewController: UIViewController, UITableViewDelegate, UITableV
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RestaurantCell", for: indexPath) as! RestaurantCell
-        let restaurantInfo: JSON = restaurants![indexPath.row]
+        let restaurantInfo: NSManagedObject = listRestaurants[indexPath.row]
         
-        let urlImage: String = restaurantInfo["image"].stringValue
+        let urlImage: String = restaurantInfo.value(forKey: "image") as! String
         
         cell.picture?.af_setImage(withURL: URL(string: urlImage)!)
         
-        cell.name?.text = restaurantInfo["name"].string
-        cell.info?.text = restaurantInfo["description"].string
+        cell.name?.text = restaurantInfo.value(forKey: "name") as? String
+        cell.info?.text = restaurantInfo.value(forKey: "information") as? String
         
-        let starCount: Int = (restaurantInfo["stars"].int)!
-        let priceCount: Int = (restaurantInfo["price"].int)!
+        let starCount: Int = (restaurantInfo.value(forKey: "stars") as! Int)
+        let priceCount: Int = (restaurantInfo.value(forKey: "price") as! Int)
         
         cell.star_1?.isHidden = true
         cell.star_2?.isHidden = true
@@ -174,13 +176,57 @@ class RestaurantsViewController: UIViewController, UITableViewDelegate, UITableV
                 let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .alwaysMapped)
                 restaurants = JSON(data: data)
                 loadAnnotationsOnMap()
-                tableInfo?.reloadData()
+                saveOnCoreData()
+                //tableInfo?.reloadData()
             } catch let error {
                 print(error.localizedDescription)
                 
             }
         } else {
             print("Invalid filename/path")
+        }
+    }
+    
+    func saveOnCoreData() {
+        let appDelegate = UIApplication.shared.delegate as? AppDelegate
+        let manageContext = appDelegate?.persistentContainer.viewContext
+        
+        do {
+            for restaurant: JSON in (restaurants?.array)! {
+                let entity = NSEntityDescription.entity(forEntityName: "Restaurants", in: manageContext!)
+                let newRestaurant = NSManagedObject(entity: entity!, insertInto: manageContext)
+                
+                newRestaurant.setValue(restaurant["name"].stringValue, forKey: "name")
+                newRestaurant.setValue(restaurant["description"].stringValue, forKey: "information")
+                newRestaurant.setValue(restaurant["image"].stringValue, forKey: "image")
+                newRestaurant.setValue(restaurant["price"].intValue, forKey: "price")
+                newRestaurant.setValue(restaurant["stars"].intValue, forKey: "stars")
+                newRestaurant.setValue(restaurant["latitude"].floatValue, forKey: "latitude")
+                newRestaurant.setValue(restaurant["longitude"].floatValue, forKey: "longitude")
+                
+                try manageContext?.save()
+            }
+            
+            loadRestaurants()
+        } catch let errorView as NSError {
+            print("No se pudo guardar: \(errorView), \(errorView.userInfo)")
+        }
+    }
+    
+    func loadRestaurants() {
+        let appDelegate = UIApplication.shared.delegate as? AppDelegate
+        let manageContext = appDelegate?.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Restaurants")
+        
+        do {
+            self.listRestaurants = try manageContext?.fetch(fetchRequest) as! [NSManagedObject]
+            if self.listRestaurants.count > 0 {
+                tableInfo?.reloadData()
+            } else {
+                loadJSONInfo()
+            }
+        } catch let error as NSError {
+            print("No se obtener la información: \(error), \(error.userInfo)")
         }
     }
     
